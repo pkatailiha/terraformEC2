@@ -3,7 +3,7 @@ data "aws_ami" "ubuntu" {
 
     filter {
         name   = "name"
-        values = ["ubuntu/images/hvm-ssd/*20.04-amd64-server-*"]
+        values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20240927"]
     }
 
     filter {
@@ -11,11 +11,11 @@ data "aws_ami" "ubuntu" {
         values = ["hvm"]
     }
     
-    owners = ["423623844090"] # Canonical
+    owners = ["099720109477"] # Canonical
 }
 
 provider "aws" {
-  region  = "us-east-2"
+  region  = "ap-south-1"
 }
 
 resource "aws_instance" "app_server" {
