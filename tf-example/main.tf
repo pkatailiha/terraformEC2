@@ -27,3 +27,8 @@ resource "aws_instance" "app_server" {
     Name = var.ec2_name
   }
 }
+
+resource "aws_s3_bucket" "app_server" {
+  bucket = "s3-tftest"
+  acl    = "private"
+}
